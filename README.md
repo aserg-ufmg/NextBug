@@ -1,5 +1,4 @@
 # NextBug
-A next-good-bug recommender for Bugzilla
 
 NextBug is a free open-source tool to recommend similar bugs to maintainers based on the textual description of the bugs stored in Bugzilla.
 
@@ -39,8 +38,4 @@ NextBug is an academic project developed by members of this research group. If y
 <strong>More Info</strong>
 
 <a href="http://www.dcc.ufmg.br/~mtov/pub/2014_cbsoft_nextbug.pdf"> <img src="http://aserg.labsoft.dcc.ufmg.br/wordpress/wp-content/plugins/papercite/img/pdf.png" alt="[PDF]" /></a> Henrique Rocha; Guilherme Oliveira; Humberto Maques-Neto; Marco Tulio Valente. NextBug: A Tool for Recommending Similar Bugs in Open-Source Systems. V Brazilian Conference on Software: Theory and Practice (Tools Track), p. 1-8, 2014. (<strong>best tool award</strong>)
-
-<strong>Screencast (in portuguese for NextBug version 0.8) </strong>
-
-<iframe src="//www.youtube.com/embed/Tt69zVobnF8?rel=0" frameborder="0" width="420" height="315"></iframe>
 
