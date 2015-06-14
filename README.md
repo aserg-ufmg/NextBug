@@ -9,7 +9,7 @@ NextBug is a free open-source tool to recommend similar bugs to maintainers bas
 
 <strong>Download</strong>
 
-Download <a href="../nextbug-downloads/NextBug-1.0-release.zip">NextBug 1.0 full release</a>.
+Download <a href="http://aserg.labsoft.dcc.ufmg.br/nextbug-downloads/NextBug-1.0-release.zip">NextBug 1.0 full release</a>.
 
 <strong>How to Install</strong>
 <ul>
