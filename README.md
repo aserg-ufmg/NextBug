@@ -1,6 +1,6 @@
 # NextBug
 
-NextBug is a free open-source tool to recommend similar bugs to maintainers based on the textual description of the bugs stored in Bugzilla.
+NextBug is an open source tool to recommend similar bugs using the textual description of the bugs stored in Bugzilla.
 
 <strong>Screenshot </strong>
 
