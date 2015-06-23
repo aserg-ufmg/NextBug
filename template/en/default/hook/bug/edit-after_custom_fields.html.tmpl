@@ -1,0 +1,153 @@
+[%# This Source Code Form is subject to the terms of the Mozilla Public
+  # License, v. 2.0. If a copy of the MPL was not distributed with this
+  # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+  #
+  # This Source Code Form is "Incompatible With Secondary Licenses", as
+  # defined by the Mozilla Public License, v. 2.0.
+  #%]
+[% IF bug.id %]
+ 
+
+  
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	
+	
+	<script type="text/javascript">
+	
+	
+	function returnRefresh(returnVal) {
+			location.reload();
+			getElementById_s('valor').value = returnVal[1] ;
+			getElementById_s('outro').focus();
+			
+                       
+		}
+		function getElementById_s(id){
+			var obj = null;
+			if(document.getElementById){
+				obj = document.getElementById(id);
+			}else if(document.all){
+				obj = document.all[id];
+			}
+			return obj;
+		}
+	
+	
+	$(document).ready(function(){
+		$("#show").click(function( e ){
+		  
+			e.preventDefault();
+			
+			var href = $( this ).attr('href');
+			$("#nextb_recommendations").load( href +" #nextb_recommendations");
+			$("#nextb_recommendations").show("300");
+			
+		});
+	
+		$("#show1").click(function( e ){
+		  
+			e.preventDefault();
+			
+			var href = $( this ).attr('href');
+			$("#nextb_recommendations").load( href +" #nextb_recommendations");
+			$("#nextb_recommendations").show("300");
+			
+		});
+		
+		$("#hide").click(function( e ){
+		e.preventDefault();
+		var href = $( this ).attr('href');
+		$("#nextb_recommendations").hide("300");
+			
+		});     
+		    
+		
+	});
+	
+	
+	
+
+      function muda(){
+   valor = document.getElementById('btn').innerHTML;
+   
+    if(valor == 'show' || valor == ''){
+      
+       document.getElementById('btn').innerHTML = 'hide';
+       $("#hide").show("300");
+       $("#show").hide();
+       
+    }else{
+       document.getElementById('btn').innerHTML = 'show';
+      $("#show").show("300");
+      $("#hide").hide();
+        }
+      }
+//-->
+	
+	
+	
+	
+	</script>
+
+
+<script language="javascript">
+//coletando o cookie e passando como parametro;
+	$(document).ready(function () {
+
+		var similarityThreshold = getCookie("similarityThreshold");
+		var highestSeverity = getCookie("highestSeverity");
+		var lowestSeverity = getCookie("lowestSeverity");
+		var includeEnhancements =getCookie("includeEnhancements");
+		var unassignedBugsOnly = getCookie("unassignedBugsOnly");
+		var didnotreport= getCookie("didnotreport");
+		var MaxRec = getCookie("MaxRec");
+		
+		if(didnotreport == 1 && [%user.id%] == 0){
+
+			alert("você selecionou a opção didnotreport porem não esta logado,logue para a configuração surtir efeito");
+			didnotreport = 0;
+		}
+
+
+
+
+
+
+		var parametro = "extensions/NextBug/bugsSimilares.cgi?id=[% bug.bug_id %]" + "&similarityThreshold=" +similarityThreshold +"&compid=[%bug.component_id %]" + "&highestSeverity="+highestSeverity +"&lowestSeverity="+lowestSeverity+"&includeEnhancements="+includeEnhancements+"&unassignedBugsOnly="+unassignedBugsOnly+"&didnotreport="+didnotreport+"&iduser=[%user.id%]&MaxRec="+MaxRec; 
+    		$('#show1')[0].setAttribute("href",parametro);
+		
+
+   
+});
+
+
+</script>
+
+
+    <tr id = "menuS">
+	<th class="field_label">
+	
+        <label for="recsys" accesskey="a">NextBug <input type = "button" class = "botao" onclick="showPopWin('page.cgi?id=nextbug/modalContent.html', 300, 250, returnRefresh);"/>:</label>
+	 </th>
+
+<td ><a id = 'show1'  href = "/extensions/NextBug/bugsSimilares.cgi?id=[% bug.bug_id %]"><span id="btn1" onclick="muda();">search</span></a>
+
+
+         <a id = 'show'  href = "nextbug/tests.cgi?id=[% bug.bug_id %]"><span id="btn" onclick="muda();"></span></a>
+	 <a id = 'hide' style = "display:none"  href = "/extensions/NextBug/bugsSimilares.cgi?id=[% bug.bug_id %]">(<span id="btn" onclick="muda();">hide</span>)</a> </td>
+</tr>	
+ 
+    <tr>
+    <th class="field_label">
+        
+	 </th>
+    <td >
+
+	<div id="nextb_recommendations">
+		
+	</div><!-- /content -->
+	</td>
+    </tr>
+	
+
+[% END %]
