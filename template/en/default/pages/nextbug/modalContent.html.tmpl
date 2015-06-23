@@ -1,0 +1,194 @@
+[%# This Source Code Form is subject to the terms of the Mozilla Public
+  # License, v. 2.0. If a copy of the MPL was not distributed with this
+  # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+  #
+  # This Source Code Form is "Incompatible With Secondary Licenses", as
+  # defined by the Mozilla Public License, v. 2.0.
+  #%]
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>NextBug - Config</title>
+	<link rel="stylesheet" type="text/css" href="extensions/NextBug/web//style.css" />
+	<script language="Javascript" src="extensions/NextBug/web/cookie.js"></script>
+	<script language="javascript">
+function defalt(){
+		
+     
+
+	if(getCookie("similarityThreshold")==""){
+		 document.getElementById("St").value =10;
+	}
+	else{
+      	document.getElementById("St").value = getCookie("similarityThreshold");
+	}
+     document.getElementById("Hs").value = getCookie("highestSeverity");
+     document.getElementById("Ls").value = getCookie("lowestSeverity");
+     if(getCookie("MaxRec")== ""){
+		document.getElementById("MaxRec").value = 5;
+     }else{
+     	document.getElementById("MaxRec").value = getCookie("MaxRec");
+     
+     }
+	if(getCookie("includeEnhancements") == 1){
+     
+        document.getElementById("includeenhancements").checked = true;
+     
+     }
+	 else{
+	 
+		 document.getElementById("includeenhancements").checked = false;
+	 
+	 }
+     
+     if(getCookie("unassignedBugsOnly") == 1){
+       document.getElementById("unassignedbugsonly").checked = true;
+     
+     }
+	 else{
+	 
+		 document.getElementById("unassignedbugsonly").checked = false;
+	 }
+
+
+
+  if(getCookie("didnotreport") == 1){
+       document.getElementById("didnotreport").checked = true;
+     
+     }
+	 else{
+	 
+		 document.getElementById("didnotreport").checked = false;
+	 }
+     
+	  	
+
+
+}
+var returnVal = new Array();
+
+
+		function ClosePopupWin ()	{
+				
+				returnVal = 1;
+				window.top.hidePopWin(true);
+		}
+
+function ArmazenaEmCookie(){
+
+var similarityThreshold = document.getElementById("St").value;
+var highestSeverity = document.getElementById("Hs").value;
+var lowestSeverity = document.getElementById("Ls").value;
+var includeEnhancements = document.getElementById("includeenhancements");
+var unassignedBugsOnly = document.getElementById("unassignedbugsonly");
+var didnotreport = document.getElementById("didnotreport");
+var MaxRec = document.getElementById("MaxRec").value;
+
+
+setCookie("similarityThreshold",similarityThreshold, 30);
+setCookie("highestSeverity", highestSeverity, 30);
+setCookie("lowestSeverity",lowestSeverity, 30);
+setCookie("MaxRec",MaxRec, 30);
+
+
+if(includeEnhancements.checked == true){
+	setCookie("includeEnhancements",includeEnhancements.value, 30);
+}
+else{
+	setCookie("includeEnhancements","0", 30);
+}
+
+if(unassignedBugsOnly.checked == true){
+	setCookie("unassignedBugsOnly",unassignedBugsOnly.value, 30);
+}
+else{
+	setCookie("unassignedBugsOnly","0", 30);
+}
+
+if(didnotreport.checked == true){
+	setCookie("didnotreport",didnotreport.value, 30);
+	alert("entrei");
+}
+else{
+	setCookie("didnotreport","0", 30);
+}
+
+
+
+
+
+ClosePopupWin();
+
+
+
+
+}
+
+
+
+	</script>
+
+<script language="javascript">
+function teste()	{
+var teste1	 =  "asd";
+ document.getElementById("as").setAttribute("href",teste1);
+
+}
+
+
+</script>
+</head>
+<body onload ="defalt()">
+	
+         <form>
+<label>Similarity Threshold: </label>		
+ <input type = "text" id = "St"  MAXLENGTH="3" value = "10"/><label> %</label><br/>
+<br/>
+
+<label>Max Recommendations: </label>		
+ <input type = "text" id="MaxRec" value ="5" MAXLENGTH="2" /> <br/> 
+  <fieldset>
+<legend>Severities:</legend>
+<label>Exclude higher than</label>
+<select id = "Hs">
+  <option value="---">----</option>
+  <option value="blocker">blocker</option>
+  <option value="critical">critical</option>
+  <option value="major">major</option>
+  <option value="normal">normal</option>
+ <option value="minor">minor</option>
+ <option value="trivial">trivial</option>
+</select>	      
+ 	
+</br>
+</br>
+
+<label>Exclude lower than</label>
+
+<select id = "Ls">
+  <option value="---">----</option>
+  <option value="blocker">blocker</option>
+  <option value="critical">critical</option>
+  <option value="major">major</option>
+  <option value="normal">normal</option>
+ <option value="minor">minor</option>
+ <option value="trivial">trivial</option>
+</select></br>		      
+ <input type="checkbox" id = "includeenhancements" value="1">Include enhancements <br>	
+</fieldset>
+
+
+<input type="checkbox" id="unassignedbugsonly" value="1">Unassigned Bugs only 	<br>
+<input type="checkbox" id="didnotreport" value="1" > Bugs I did not report<br>
+<br>
+
+
+
+       
+	<button onclick="ArmazenaEmCookie()">Save</button>
+    
+	<button onclick="ClosePopupWin()" >Cancel</button>
+
+	</form>
+
+</body>
+

@@ -1,0 +1,48 @@
+[%# This Source Code Form is subject to the terms of the Mozilla Public
+  # License, v. 2.0. If a copy of the MPL was not distributed with this
+  # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+  #
+  # This Source Code Form is "Incompatible With Secondary Licenses", as
+  # defined by the Mozilla Public License, v. 2.0.
+  #%]
+
+[% IF serial_no.value == '1' %]
+
+ <div id='nextb_recommendations>
+	<p>No recommendations for this search</p>
+ </div>
+[% ELSE %]
+
+[%  SET numRec = 0%]
+<div id='nextb_recommendations'>
+<table id='nextb_recommendations_table'  cellspacing='0' cellpadding='4' style='border:1px solid #eeeeee;border-collapse: collapse; border-bottom: 1px solid rgba(0, 0, 0, 0.2); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);'>
+  <tr>
+    <th colspan="2" style="background-color:#DDDDDD">
+      Similar Bugs Recommendation
+    </th>
+  </tr>
+[% FOREACH pista IN serial_no%]
+[%LAST IF numRec >= MaxRec %]
+  <tr>
+    <td>
+      <a href =[%pista.value.8%]><b>[%pista.value.0%]</b></a>
+      [%pista.value.1%]
+        <span class='bz_attach_extra_info'>  </BR>  <span class='vcard'><span class='fn'> [%pista.value.3%],[%pista.value.6%],[%pista.value.7%]</span>
+        
+	
+    </td>
+    <td>	
+	[%pista.value.2	*100	 | format('%.0f')%] % Similarity			
+    </td>
+  </tr>
+	
+  </DIV>
+
+	
+
+	
+[%  SET numRec = numRec +1%]
+  [% END %]
+ [% END %]
+
+
