@@ -1,0 +1,13 @@
+How to Install NextBug
+
+- Install Bugzilla (go to http://www.bugzilla.org and follow the instructions) if you dont already have it =)
+
+- Unpack the contents of the Nextbug file in the "extensions/" folder inside Bugzilla (a NextBug folder will be created).
+
+- In NextBug folder there is a "required_libs" subfolder with Perl libraries. Install the libraries to your Perl interpreter (follow the instructions for each library). NextBug-1.0 requires four libraries: Lingua-Stem-Snowball, Lingua-StopWords, Log4perl, and Math-Random-ISAAC.
+
+- Set the NextBug folder (and all its subfolders) permissions to be the same as Bugzilla. For example, to change the permissions: "chmod -R 751 NextBug/", also change the owner: "chown -R <bugzilla-owner> NextBug/", and the group: "chgrp -R <bugzilla-owner> NextBug/".
+
+- Remove the "disabled" file inside the NextBug folder.
+
+- Enjoy the features of NextBug.
