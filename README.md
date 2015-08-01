@@ -4,8 +4,12 @@ NextBug is a Bugzilla extension to recommend similar bugs using the textual desc
 
 <strong>Screenshot </strong>
 
+This screenshot shows information on a bug related to the camera of a mobile device running FirefoxOS (Bug 937928). On the
+lower right corner, three other bugs related to mobile device cameras are recommended by NextBug, including their textual similarity with the short description of the original bug.
+
 <a href="http://aserg.labsoft.dcc.ufmg.br/wordpress/wp-content/uploads/2015/04/NextBug-1.0-screenshot1.png"><img src="http://aserg.labsoft.dcc.ufmg.br/wordpress/wp-content/uploads/2015/04/NextBug-1.0-screenshot1.png" alt="NextBug 1.0 Screenshot 1" title="NextBug-1.0-screenshot1" width="580" /></a>
 <!-- [gallery columns="2" orderby="title"] -->
+
 
 <strong>Download</strong>
 
