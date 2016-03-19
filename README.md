@@ -41,6 +41,8 @@ NextBug is an academic project developed by members of this research group. If y
 
 <strong>More Info</strong>
 
+<a href="http://www.dcc.ufmg.br/~mtov/pub/2016-saner-nextbug.pdf"> <img src="http://aserg.labsoft.dcc.ufmg.br/wordpress/wp-content/plugins/papercite/img/pdf.png" alt="[PDF]" /></a> Henrique Rocha, Marco Tulio Valente, Humberto Maques-Neto, Gail Murphy. An Empirical Study on Recommendations of Similar Bugs.  In <em>23rd International Conference on Software Analysis, Evolution and Reengineering (SANER)</em>, pages 1-10, 2016. 
+
 <a href="http://www.dcc.ufmg.br/~mtov/pub/2015_jserd.pdf"> <img src="http://aserg.labsoft.dcc.ufmg.br/wordpress/wp-content/plugins/papercite/img/pdf.png" alt="[PDF]" /></a> Henrique Rocha, Guilherme Oliveira, Humberto Maques-Neto, Marco Tulio Valente. NextBug: a Bugzilla extension for recommending similar bugs. <em>Journal of Software Engineering Research and Development</em>, pages 1-14, 2015.
 
 <a href="http://www.dcc.ufmg.br/~mtov/pub/2014_cbsoft_nextbug.pdf"> <img src="http://aserg.labsoft.dcc.ufmg.br/wordpress/wp-content/plugins/papercite/img/pdf.png" alt="[PDF]" /></a> Henrique Rocha; Guilherme Oliveira; Humberto Maques-Neto; Marco Tulio Valente. NextBug: A Tool for Recommending Similar Bugs in Open-Source Systems. V Brazilian Conference on Software: Theory and Practice (Tools Track), p. 1-8, 2014. (<strong>best tool award</strong>)
